@@ -40,6 +40,7 @@ module.exports = {
         global.useRule = require('./use-rule');
         global.useGame = this.game;
         global.useJsCommon = require('./use-js-common');
+        global.useWs = require('./use-ws');
         app.use(function(req , res , next){
             var method = req.method;
             if(method === 'POST'

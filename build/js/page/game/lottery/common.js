@@ -169,7 +169,7 @@
 
         });
     });
-
+    WY.trigger('create-socket');
     WY.bind('modal-handler-score-down',function($content){
         $content.click(function(){
             var score = $('.score-down-input').val();
@@ -186,6 +186,7 @@
             },function(a){
                 useCommon.toast(a.message);
                 if(a.code == 0){
+                    WY.trigger('socket-down-score',{merchantId:resJson.merchantInfo.userId});
                     WY.trigger('modal-hide');
                     WY.trigger('user-info-flush');
                 }

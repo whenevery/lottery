@@ -16,6 +16,7 @@ useGame.rule.reload = function(data){
         resRuleData.forEach(function(a){
             if(that.resRule.every(function(b , i){
                     if(a.code === b.code){
+                        if(a.count)if(a.count !== b.count)return true;
                         that.resRule[i] = a;
                         return false;
                     }

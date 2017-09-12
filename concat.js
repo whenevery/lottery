@@ -38,6 +38,7 @@ module.exports = [
             './build/js/ui/file.js',
             './build/js/ui/qrcode.js',
             './build/js/ui/date-picker.js',
+            './build/js/ui/web-socket.js',
             './build/js/page/merchant/index.js',
             './build/js/page/merchant/extend/**'
         ],
@@ -67,6 +68,7 @@ module.exports = [
             './build/js/ui/swiper.min.js',
             './build/js/ui/date-time.js',
             './build/js/ui/qrcode.js',
+            './build/js/ui/web-socket.js',
             './build/js/page/game/lottery/common.js',
             './build/js/page/game/lottery/index.js',
             './models/use-js-common/game.js',

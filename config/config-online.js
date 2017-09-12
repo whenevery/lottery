@@ -1,6 +1,7 @@
 //admin 1234yqs_admin
 module.exports = {
     debug:0,
+    wsHref:'ws://120.27.213.0:2999',
     "wechatLoginUrl":'http://h5.yqsapp.com/wechat/entrance/wxcp',
     "log4js":{
         "customBaseDir" :"../logs/lottery/",

@@ -1,5 +1,26 @@
 ;(function(){
     var merchantObj = {};
+    var downScoreAudio = $('<audio src="/images/audio/xiafen.mp3"></audio>').css('opacity','0');
+    downScoreAudio.appendTo('body');
+    var gameErrorAudio = $('<audio src="/images/audio/error.mp3"></audio>').css('opacity','0');
+    gameErrorAudio.appendTo('body');
+    console.log('create-socket start');
+    WY.trigger('create-socket',{
+        downScore:function(){
+            console.log('down score notice');
+            downScoreAudio[0].play();
+        },
+        gameError:function(){
+            console.log('game error');
+            gameErrorAudio[0].play();
+        }
+    },function(socket){
+        console.log('create-socket end');
+        socket.send(JSON.stringify({
+            type:'addMerchant',
+            merchantId:sessionJson.userInfo.userId
+        }));
+    });
     WY.ready('user-member-obj',merchantObj);
     function doInit(index){
         merchantObj[['member','game','count','rule','my'][index]].init();

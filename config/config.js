@@ -1,6 +1,8 @@
 //admin 1234yqs_admin
 module.exports = {
     "port":3083,
+    wsPort:2999,
+    wsHref:'ws://127.0.0.1:2999',
     debug:0,
     "yqsapi":"http://api.yqsapp.com",
     "imgUrl":"http://img.yqsapp.com/",

@@ -50,6 +50,7 @@ module.exports = function(req , res , next){
             data = data || {};
             data.resJson = data.resJson || {};
             data.resJson.imgUrl = useConfig.imgUrl;
+            data.resJson.wsHref = useConfig.wsHref;
             data.modalInfo = data.modalInfo || {};
             //渠道默认都是msxf
             data.sessionJson = req.session || {};

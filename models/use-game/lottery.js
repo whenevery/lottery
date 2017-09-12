@@ -143,6 +143,7 @@ module.exports = function(game){
                     //如果超过5分钟未查询到开奖结果 则不再查询
                     if(Date.time - that.settleTime > 5 * 60 * 1000){
                         that.doNext(1);
+                        useWs.sendMerchant({type:'gameError'});
                         return ;
                     }
                     that.settle(call);

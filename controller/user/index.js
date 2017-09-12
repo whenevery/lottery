@@ -9,7 +9,7 @@ router.get('/',useValidate.wechatLogin,useWechat.userInfo.flush, function(req, r
     if(userInfo.type === 0){
         res.useRender('user/index');
     }else{
-        return res.sendErrorHtml('/admin/merchant');
+        return res.useRender('/admin/merchant');
     }
 });
 exports.router = router;
