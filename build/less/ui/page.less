@@ -1,0 +1,81 @@
+.page{
+  &-inline{
+    background: white;
+    .flex(row,space-between);
+    & > label{
+      width: 30%;
+      height: 40px;
+      padding-top: 10px;
+      padding-right: 10px;
+      text-align: right;
+      line-height: 20px;
+    }
+    & > input{
+      width: 70%;
+    }
+    & > .ratio{
+      &-1{
+        width: 10%;
+      }
+      &-2{
+        width: 20%;
+      }
+      &-3{
+        width: 30%;
+      }
+      &-4{
+        width: 40%;
+      }
+      &-5{
+        width: 50%;
+      }
+      &-6{
+        width: 60%;
+      }
+      &-7{
+        width: 70%;
+      }
+      &-8{
+        width: 80%;
+      }
+      &-9{
+        width: 90%;
+      }
+      &-10{
+        width: 100%;
+      }
+    }
+  }
+  &-fixed{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px;
+  }
+  &-header{
+    top: 0;
+    padding-top: 20px;
+  }
+  &-footer{
+    bottom: 0;
+    padding-bottom: 20px;
+  }
+  &-absolute{
+    position: absolute;
+  }
+}
+.active-item{
+
+}
+.menu-item{
+  padding-left: 20px;
+  padding-right: 20px;
+  color: @color-white-5;
+  line-height: 34px;
+  height: 36px;
+  &.active{
+    color:white;
+    border-bottom: 2px solid white;
+  }
+}

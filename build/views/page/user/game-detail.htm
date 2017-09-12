@@ -1,0 +1,45 @@
+<% title="游戏详情"%>
+<% include ../../layouts/header.htm%>
+<div class="back-f5 pt-60 pl-10 pr-10 pb-10  height-100-100 overflow-scroll">
+    <div class="page-header page-fixed page-absolute flex-center back-blue">
+        <div class="active-item menu-item active" data-type="game-detail">所有</div>
+        <div class="active-item menu-item" data-type="game-detail">下家</div>
+        <div class="active-item menu-item" data-type="game-detail">我的</div>
+    </div>
+    <fieldset>
+        <legend>当期游戏数据</legend>
+        <div class="show-info-content pl-10 pr-10 pt-10 pb-10">
+            <div class="flex-between">
+                <div>日期</div><div game-info="date"></div>
+            </div>
+            <div class="flex-between">
+                <div>期数</div><div game-info="term"></div>
+            </div>
+            <div class="flex-between">
+                <div>开奖号</div><div game-info="result"></div>
+            </div>
+            <div class="flex-between">
+                <div>开奖时间</div><div game-info="openTime"></div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>当期游戏数据统计</legend>
+        <div class="show-count-content pl-10 pr-10 pt-10 pb-10"></div>
+    </fieldset>
+    <fieldset>
+        <legend>下注列表</legend>
+        <table class="show-bet-content table width-100-100">
+            <tr>
+                <td>昵称</td>
+                <td>玩法</td>
+                <td>押注</td>
+                <td>押分</td>
+                <td>结果</td>
+            </tr>
+        </table>
+    </fieldset>
+
+</div>
+<script src="/js/build/game-detail.js"></script>
+<% include ../../layouts/footer.htm%>

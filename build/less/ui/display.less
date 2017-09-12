@@ -1,0 +1,16 @@
+.inline-block{
+  display: inline-block;
+}
+.display-table{
+  display: table;
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+  & > *{
+    vertical-align: middle;
+    display: table-cell;
+  }
+  & > input,select,textarea{
+    display: table-cell;
+  }
+}

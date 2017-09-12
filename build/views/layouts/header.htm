@@ -1,0 +1,107 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <title><%=title%></title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!-- 尺寸的设置以及页面是否允许缩放 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/lib/jquery.min.js"></script>
+    <script>
+        var appPath = '/';
+        window.usePageSize = 20;
+
+        $(document).ajaxError(function(e , res , ajaxOptions){
+            useCommon.loading = false;
+            var data = useCommon.parseJSON(res.responseText) || {};
+            if(ajaxOptions.notErrorHandler)return false;
+            if(res.status === 0){
+                useCommon.alert({
+                    content:ajaxOptions.errorText || '系统繁忙 请稍后再试'
+                });
+                if(!ajaxOptions.notLog)window.errorLog({
+                    status:res.status,
+                    statusText:res.statusText,
+                    url:ajaxOptions.url
+                });
+            }
+            if(res.status == 401){
+                useCommon.alert({
+                    content:data.message || '登录超时 请重新登录',
+                    done:function(){
+                        location.href = appPath + 'login';
+                    }
+                });
+            }
+            if(res.status == 402){
+                useCommon.alert({
+                    content:data.message || '没有认证 请先身份认证',
+                    done:function(){
+                        location.href = appPath + 'login/indent';
+                    }
+                });
+            }
+            if(res.status == 403){
+                useCommon.alert({
+                    content:data.message || '页面超时 请刷新再试',
+                    done:function(){
+                        location.reload();
+                    }
+                });
+            }
+        });
+        $.ajaxPrefilter(function (options, originalOptions, xhr) {
+            var token = '<%=sessionJson.token%>';
+            var _csrf = '<%=__CSRF%>';
+            var isPost = options.type.toUpperCase() == 'POST';
+            if(options.data instanceof FormData){
+                if(isPost){
+                    options.data.append('__CSRF' , _csrf);
+                    options.data.append('token' , token);
+                }
+                options.data.append('__' , Date.now() + Math.random());
+            }else{
+                if(typeof options.data == 'string'){
+                    if(options.data){
+                        options.data += '&';
+                    }
+                    options.data += '__='+(Date.now() + Math.random());
+                    if(isPost){
+                        options.data += '&__CSRF='+_csrf;
+                        options.data += '&token='+token;
+                    }
+                }
+                else if(options.data){
+                    if(isPost){
+                        options.data.__CSRF = _csrf;
+                        options.data.token = token;
+                    }
+                    options.data.__ = (Date.now() + Math.random());
+                }else{
+                    options.data = '__='+(Date.now() + Math.random());
+                    if(isPost){
+                        options.data += '&__CSRF='+_csrf;
+                        options.data += '&token='+token;
+                    }
+                }
+            }
+            //如果不是绝对路径 就加上前缀
+            if (!/^((\/)|(\w+\:))/.test(options.url)) {
+                options.url = appPath + options.url;
+            }
+            //前端30秒超时
+            if(!options.timeout)options.timeout = 30 * 1000;
+        });
+        window.useCommon = window.useCommon || {};
+        window.useValidate = {};
+        //默认
+        window.resJson = <%-JSON.stringify(resJson)%>;
+        window.sessionJson = <%-JSON.stringify(sessionJson)%>;
+        window.configJson = {};
+    </script>
+    <% include ./include.htm%>
+</head>
+<body>

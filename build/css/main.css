@@ -1,0 +1,947 @@
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+html {
+  font-size: 14px;
+}
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size: 100%;
+  color: #666;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: 100%;
+  color: #666;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: 100%;
+  color: #666;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size: 100%;
+  color: #666;
+}
+.write-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.break-all {
+  word-break: break-all;
+}
+.break-none {
+  white-space: nowrap;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.back-white {
+  background: white;
+}
+.back-blue {
+  background: #0ea5fb;
+}
+.back-blue-1 {
+  background: #004ee7;
+}
+.back-blue-2 {
+  background: #6d36fe;
+}
+.back-transparent {
+  background: transparent;
+}
+.back-230 {
+  background: #e6e6e6;
+}
+.back-f5 {
+  background: #f5f5f5;
+}
+.back-blank-1 {
+  background: #201f25;
+}
+.back-blank-2 {
+  background: #1c1a1f;
+}
+.back-blank-3 {
+  background: #2a2e39;
+}
+.back-yellow-3 {
+  background: #fde8d3;
+}
+.back-yellow-4 {
+  background: #f19411;
+}
+.back-yellow-2 {
+  background: #fbd1a6;
+}
+.back-yellow-6 {
+  background: #f8c492;
+}
+.back-red-1 {
+  background: #fa2323;
+}
+.back-red-3 {
+  background: #eb5640;
+}
+.border-none {
+  border: none;
+}
+.border-rds-100 {
+  border-radius: 100%;
+}
+.border-rds-10 {
+  border-radius: 10px;
+}
+.border-rds-20 {
+  border-radius: 20px;
+}
+.border-rds-5 {
+  border-radius: 5px;
+}
+.border-rds-2 {
+  border-radius: 2px;
+}
+.border-eee {
+  border: 1px solid #eee;
+}
+.border-white {
+  border: 1px solid white;
+}
+.border-82 {
+  border: 1px solid #828282;
+}
+.border-yellow-1 {
+  border: 1px solid #8a3228;
+}
+.border-yellow-2 {
+  border: 1px solid #fbd1a6;
+}
+.border-b-red {
+  border-bottom: 1px solid red;
+}
+.border-b-white {
+  border-bottom: 1px solid white;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.color-white {
+  color: white;
+}
+.color-white-6 {
+  color: rgba(255, 255, 255, 0.6);
+}
+.color-333 {
+  color: #333;
+}
+.color-666 {
+  color: #666;
+}
+.color-999 {
+  color: #999;
+}
+.color-blue {
+  color: #0ea5fb;
+}
+.color-blue-1 {
+  color: #004ee7;
+}
+.color-blue-2 {
+  color: #6d36fe;
+}
+.color-green-1 {
+  color: #2eb200;
+}
+.color-yellow {
+  color: yellow;
+}
+.color-yellow-1 {
+  color: #8a3228;
+}
+.color-yellow-2 {
+  color: #fbd1a6;
+}
+.color-yellow-5 {
+  color: #fbc630;
+}
+.color-red {
+  color: red;
+}
+.color-red-2 {
+  color: #c9008c;
+}
+.fz-weight {
+  font-weight: bold;
+}
+.fz-10 {
+  font-size: 10px;
+}
+.fz-12 {
+  font-size: 12px;
+}
+.fz-14 {
+  font-size: 14px;
+}
+.fz-16 {
+  font-size: 16px;
+}
+.fz-18 {
+  font-size: 18px;
+}
+.fz-20 {
+  font-size: 20px;
+}
+.fz-22 {
+  font-size: 22px;
+}
+.fz-24 {
+  font-size: 24px;
+}
+.height-100-100 {
+  height: 100%;
+}
+.height-20 {
+  height: 20px;
+}
+.height-40 {
+  height: 40px;
+}
+.height-50 {
+  height: 50px;
+}
+.height-90 {
+  height: 90px;
+}
+.height-100 {
+  height: 100px;
+}
+.height-300 {
+  height: 300px;
+}
+.lh-20 {
+  line-height: 20px;
+}
+.lh-30 {
+  line-height: 30px;
+}
+.lh-40 {
+  line-height: 40px;
+}
+.margin-auto {
+  margin: auto;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-2 {
+  margin-right: 2px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.pt-5 {
+  padding-top: 5px;
+}
+.pt-10 {
+  padding-top: 10px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.pt-40 {
+  padding-top: 40px;
+}
+.pt-60 {
+  padding-top: 60px;
+}
+.pb-10 {
+  padding-bottom: 10px;
+}
+.pb-20 {
+  padding-bottom: 20px;
+}
+.pb-60 {
+  padding-bottom: 60px;
+}
+.pr-10 {
+  padding-right: 10px;
+}
+.pl-10 {
+  padding-left: 10px;
+}
+.position-relative {
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+}
+.position-fixed {
+  position: fixed;
+}
+.z-index-1 {
+  z-index: 1;
+}
+.z-index-10 {
+  z-index: 10;
+}
+.z-index-100 {
+  z-index: 100;
+}
+.z-index-1000 {
+  z-index: 1000;
+}
+.top-0 {
+  top: 0;
+}
+.left-0 {
+  left: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+.right-0 {
+  right: 0;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-middle {
+  vertical-align: middle;
+}
+.text-bottom {
+  vertical-align: text-bottom;
+}
+.text-top {
+  vertical-align: text-top;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+.width-100-100 {
+  width: 100%;
+}
+.width-90-100 {
+  width: 90%;
+}
+.width-80-100 {
+  width: 80%;
+}
+.width-70-100 {
+  width: 70%;
+}
+.width-60-100 {
+  width: 60%;
+}
+.width-50-100 {
+  width: 50%;
+}
+.width-40-100 {
+  width: 40%;
+}
+.width-33-100 {
+  width: 33%;
+}
+.width-30-100 {
+  width: 30%;
+}
+.width-10-100 {
+  width: 10%;
+}
+.width-100 {
+  width: 100px;
+}
+.scale-09 {
+  transform: scale(0.9);
+}
+.scale-08 {
+  transform: scale(0.8);
+}
+.scale-07 {
+  transform: scale(0.7);
+}
+.scale-06 {
+  transform: scale(0.6);
+}
+.scale-05 {
+  transform: scale(0.5);
+}
+.btn {
+  display: inline-block;
+  height: 30px;
+  padding: 5px 10px;
+  line-height: 20px;
+  border-radius: 2px;
+  text-align: center;
+}
+.btn-big {
+  padding: 10px;
+  border-radius: 40px;
+  height: 40px;
+  width: 60%;
+}
+.btn-ml {
+  padding: 4px;
+  height: 30px;
+  border-radius: 4px;
+}
+.btn-sm {
+  font-size: 12px;
+  border-radius: 2px;
+  height: 20px;
+  padding: 0 2px;
+}
+.btn-border {
+  line-height: 18px;
+}
+.btn-long {
+  padding: 10px;
+  border-radius: 5px;
+  height: 40px;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  outline: 0;
+}
+button {
+  border: none;
+  outline: 0;
+}
+img {
+  border: none;
+}
+.ico-big {
+  width: 250px;
+  height: 250px;
+}
+.ico-win {
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  padding-top: 5px;
+}
+.ico-win.ball-red {
+  background: url(/images/lottery/ball-red.png);
+  background-size: 100% 100%;
+}
+.ico-win.ball-yellow {
+  background: url(/images/lottery/ball-yellow.png);
+  background-size: 100% 100%;
+}
+.ico-win.win-sm {
+  font-size: 10px;
+  padding-top: 0;
+  width: 18px;
+  height: 18px;
+}
+.ico-win.fz-sm {
+  font-size: 10px;
+}
+.ico-head {
+  width: 40px;
+  height: 40px;
+}
+.ico-head-sm {
+  width: 20px;
+  height: 20px;
+}
+.ico-back {
+  width: 24px;
+  height: 24px;
+  background: url(/images/lottery/back.png);
+  background-size: 100% 100%;
+}
+input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: 40px;
+  padding: 10px 15px;
+  line-height: 20px;
+}
+input,
+textarea {
+  outline: 0;
+  border: none;
+}
+.input-sm {
+  height: 30px;
+  padding: 4px 15px;
+}
+select {
+  height: 40px;
+  line-height: 20px;
+}
+select,
+option {
+  text-align: justify;
+  border: none;
+}
+select {
+  outline: 0;
+}
+.table {
+  width: 100%;
+  border-spacing: 2px;
+  border-collapse: collapse;
+}
+.table td {
+  padding: 0 1px;
+}
+.table.border-spacing-0 {
+  border-spacing: 0;
+}
+.table tr {
+  border-bottom: 1px solid #eee;
+}
+.table .border-none tr {
+  border-bottom: 0;
+}
+.table.td-padding td {
+  padding: 3px 10px;
+}
+.table.td-ptb-1 td {
+  padding: 2px 0;
+}
+.table.td-ptb td {
+  padding: 5px 0;
+}
+.table.td-rb-eee td {
+  border-right: 1px solid #eee;
+}
+.inline-block {
+  display: inline-block;
+}
+.display-table {
+  display: table;
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+}
+.display-table > * {
+  vertical-align: middle;
+  display: table-cell;
+}
+.display-table > input,
+.display-table select,
+.display-table textarea {
+  display: table-cell;
+}
+/**
+ * flex布局
+ * @param  {string} @flex-direction:column  主轴的方向
+ * row：主轴为水平方向，起点在左端。
+ * row-reverse：主轴为水平方向，起点在右端。
+ * column：主轴为垂直方向，起点在上沿。
+ * column-reverse：主轴为垂直方向，起点在下沿。
+ * @param  {string} @justify-content:center 在主轴上的对齐方式
+ * flex-start：左对齐
+ * flex-end：右对齐
+ * center： 居中
+ * space-between：两端对齐，项目之间的间隔都相等
+ * @param  {string} @align-items:center     在交叉轴上如何对齐。
+ * flex-start：交叉轴的起点对齐。
+ * flex-end：交叉轴的终点对齐。
+ * center：交叉轴的中点对齐。
+ * baseline: 项目的第一行文字的基线对齐。
+ * stretch：如果项目未设置高度或设为auto，将占满整个容器的高度。
+ *
+ */
+/**
+ * flex子元素
+ * @param  {boolen} @display 是否允许伸缩
+ */
+.flex-between {
+  display: -webkit-box;
+  /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box;
+  /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox;
+  /* 混合版本语法: IE 10 */
+  display: -webkit-flex;
+  /* 新版本语法: Chrome 21+ */
+  display: flex;
+  /* 新版本语法: Opera 12.1, Firefox 22+ */
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-left {
+  display: -webkit-box;
+  /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box;
+  /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox;
+  /* 混合版本语法: IE 10 */
+  display: -webkit-flex;
+  /* 新版本语法: Chrome 21+ */
+  display: flex;
+  /* 新版本语法: Opera 12.1, Firefox 22+ */
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -moz-justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-center {
+  display: -webkit-box;
+  /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box;
+  /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox;
+  /* 混合版本语法: IE 10 */
+  display: -webkit-flex;
+  /* 新版本语法: Chrome 21+ */
+  display: flex;
+  /* 新版本语法: Opera 12.1, Firefox 22+ */
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.show-window-back {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .6;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.show-window-content {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+}
+.ms-popup-window {
+  z-index: 8000;
+}
+.ms-content-window {
+  z-index: 7000;
+}
+.ms-loading-window {
+  z-index: 9000;
+}
+.ms-toast-window {
+  bottom: 20%;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  font-size: 18px;
+  text-align: center;
+}
+.ms-toast-window .text {
+  background: black;
+  line-height: 25px;
+  border-radius: 15px;
+  margin: auto;
+  padding: 5px  15px;
+  color: white;
+  width: 70%;
+  max-width: 400px;
+}
+.ms-alert-main {
+  padding: 20px;
+  border-radius: 15px;
+}
+.ms-alert-content {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 20px;
+}
+.show-window-content .main {
+  padding: 25px 15px;
+  border-radius: 20px;
+}
+.show-window-content .title {
+  font-size: 18px;
+  line-height: 50px;
+  text-align: center;
+}
+.show-treaty-window {
+  padding-top: 55px;
+}
+.show-treaty-window .page-header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.show-treaty-window .show-content-body {
+  padding: 30px 15px 50px 15px;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+.ms-toast-window .width-70,
+.ms-alert-window .width-70,
+.prompt-window .width-70,
+.confirm-window .width-70 {
+  max-width: 400px;
+}
+.page-inline {
+  background: white;
+  display: -webkit-box;
+  /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box;
+  /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox;
+  /* 混合版本语法: IE 10 */
+  display: -webkit-flex;
+  /* 新版本语法: Chrome 21+ */
+  display: flex;
+  /* 新版本语法: Opera 12.1, Firefox 22+ */
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.page-inline > label {
+  width: 30%;
+  height: 40px;
+  padding-top: 10px;
+  padding-right: 10px;
+  text-align: right;
+  line-height: 20px;
+}
+.page-inline > input {
+  width: 70%;
+}
+.page-inline > .ratio-1 {
+  width: 10%;
+}
+.page-inline > .ratio-2 {
+  width: 20%;
+}
+.page-inline > .ratio-3 {
+  width: 30%;
+}
+.page-inline > .ratio-4 {
+  width: 40%;
+}
+.page-inline > .ratio-5 {
+  width: 50%;
+}
+.page-inline > .ratio-6 {
+  width: 60%;
+}
+.page-inline > .ratio-7 {
+  width: 70%;
+}
+.page-inline > .ratio-8 {
+  width: 80%;
+}
+.page-inline > .ratio-9 {
+  width: 90%;
+}
+.page-inline > .ratio-10 {
+  width: 100%;
+}
+.page-fixed {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+}
+.page-header {
+  top: 0;
+  padding-top: 20px;
+}
+.page-footer {
+  bottom: 0;
+  padding-bottom: 20px;
+}
+.page-absolute {
+  position: absolute;
+}
+.menu-item {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 34px;
+  height: 36px;
+}
+.menu-item.active {
+  color: white;
+  border-bottom: 2px solid white;
+}
+.lottery-header {
+  line-height: 24px;
+}
+.lottery-header .btn {
+  padding: 0 5px;
+  height: 24px;
+  line-height: 22px;
+}
+.lottery-time-title {
+  width: 80%;
+  height: 60px;
+  padding-top: 15px;
+  background: url(/images/lottery/title-time.png);
+  background-size: 100% 100%;
+}
+.lottery-bet-list .btn {
+  width: 80%;
+}
+.lottery-bet-list .bet-btn {
+  line-height: 18px;
+}
+.lottery-btn {
+  height: 30px;
+  padding: 5px 10px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  background: #2a2e39;
+  margin: 0 10px;
+}
+.lottery-btn.active {
+  color: #333;
+  background: #f19411;
+}
+.lottery-number {
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  line-height: 23px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 100%;
+}
+.lottery-number.active {
+  color: #333;
+  line-height: 25px;
+  background: #f19411;
+}
+.lottery-number-big {
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+}
+.lottery-number-big.active {
+  line-height: 30px;
+}
+.lottery-number-select {
+  width: 20px;
+  height: 40px;
+  line-height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.lottery-number-select.select-row {
+  width: 50px;
+  height: 30px;
+  line-height: 28px;
+}
+.lottery-number-select.select-row.active {
+  line-height: 30px;
+}
+.lottery-number-select.number {
+  border: 1px solid white;
+  color: white;
+}
+.lottery-number-select.active {
+  border: 0;
+  color: #333;
+  line-height: 40px;
+  background: #f19411;
+}
+.lottery-zoushi {
+  line-height: 36px;
+  height: 36px;
+  width: 60%;
+  border-radius: 36px;
+}
+.lottery-window-title {
+  top: -26px;
+  left: 20%;
+  position: absolute;
+  width: 60%;
+  height: 60px;
+  background: url(/images/lottery/title-window.png);
+  background-size: 100% 100%;
+  padding-top: 16px;
+  color: #8a3228;
+}

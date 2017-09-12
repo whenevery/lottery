@@ -1,0 +1,36 @@
+<% title="登录"%>
+<% include ../layouts/header.htm%>
+<div class="login-content back-f5">
+        <form class="login-form padding-lr-15">
+            <div class="text-center font-weight fz-18">登录</div>
+            <div class="mt-30 width-100 group-inline" >
+                <label>username</label>
+                <input class="input"  name="username" maxlength="20" placeholder="请输入登录账号">
+            </div>
+            <div class="mt-30 width-100 group-inline" >
+                <label>password</label>
+                <input class="input"  type="password" name="password" maxlength="18" placeholder="请输入登录密码">
+            </div>
+            <div class="text-center mt-30" >
+                <button class="btn color-white back-blue-2" type="submit" >submit</button>
+                <a href="" class="to-res-btn sm-btn back-white color-blue-1 ">去注册</a>
+            </div>
+        </form>
+        <form class="register-form padding-lr-15" style="display: none;">
+            <div class="text-center font-weight fz-18">注册</div>
+            <div class=" mt-30 width-100 group-inline" >
+                <label>username</label>
+                <input class="input"  name="username" maxlength="20" placeholder="输入手机号或微信号">
+            </div>
+            <div class=" mt-30 width-100 group-inline" >
+                <label>password</label>
+                <input class="input"  type="password" name="password" maxlength="18" placeholder="请输入登录密码">
+            </div>
+            <div class="text-center mt-30" >
+                <button class="btn color-white back-blue-2" type="submit" >submit</button>
+                <a href="" class="to-login-btn sm-btn back-white color-blue-1 ">去登录</a>
+            </div>
+        </form>
+</div>
+<script src="/js/build/login.js"></script>
+<% include ../layouts/footer.htm%>

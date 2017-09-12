@@ -1,0 +1,22 @@
+<% title="商户管理"%>
+<% include ../../layouts/header.htm%>
+<div class="back-f5 pt-60">
+    <div class="page-header page-fixed flex-center back-blue ">
+        <div class="active-item menu-item active" status="1">待审核</div>
+        <div class="active-item menu-item" status="0">正常</div>
+    </div>
+    <form class="search-form pl-10 pt-10 pb-10">
+        <input type="text" name="nickName" class="border-rds-10 back-white" placeholder="昵称搜索">
+        <button class="btn ml-10 back-blue color-white">搜索</button>
+    </form>
+    <table class="show-data-table lh-30 table back-white text-center">
+        <tr>
+            <th>昵称</th>
+            <th>手机号</th>
+            <th>到期时间</th>
+            <th>操作</th>
+        </tr>
+    </table>
+</div>
+<script src="/js/build/admin-merchant.js"></script>
+<% include ../../layouts/footer.htm%>

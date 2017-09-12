@@ -1,0 +1,16 @@
+<% title="用户数据"%>
+<% include ../../layouts/header.htm%>
+<div class="back-f5 pt-10 pl-10 pr-10 pb-10  height-100-100 overflow-scroll">
+    <div class="pt-10 border-b-white flex-between">
+        <div>头像</div><img class="ico-head" member-info="headImg"/>
+    </div>
+    <div class="pt-10 border-b-white flex-between">
+        <div>昵称</div><div member-info="nickName"></div>
+    </div>
+    <div class="pt-10 border-b-white flex-between">
+        <div>当前积分</div><div member-info="score"></div>
+    </div>
+    <div class="show-count-content"></div>
+</div>
+<script src="/js/build/merchant-member.js"></script>
+<% include ../../layouts/footer.htm%>

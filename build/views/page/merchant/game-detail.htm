@@ -1,0 +1,44 @@
+<% title="游戏详情"%>
+<% include ../../layouts/header.htm%>
+<div class="back-f5 pl-10 pr-10 pb-10  height-100-100 overflow-scroll">
+    <form class="search-form pl-10 pt-10 pb-10">
+        <input type="text" name="agentId" class="border-rds-10 width-30-100 back-white" placeholder="代理商ID">
+        <button class="btn ml-10 back-blue color-white mt-10">搜索</button>
+    </form>
+    <fieldset>
+        <legend>当期游戏数据</legend>
+        <div class="show-info-content pl-10 pr-10 pt-10 pb-10">
+            <div class="flex-between">
+                <div>日期</div><div game-info="date"></div>
+            </div>
+            <div class="flex-between">
+                <div>期数</div><div game-info="term"></div>
+            </div>
+            <div class="flex-between">
+                <div>开奖号</div><div game-info="result"></div>
+            </div>
+            <div class="flex-between">
+                <div>开奖时间</div><div game-info="openTime"></div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>当期游戏数据统计</legend>
+        <div class="show-count-content pl-10 pr-10 pt-10 pb-10"></div>
+    </fieldset>
+    <fieldset>
+        <legend>下注列表</legend>
+        <table class="show-bet-content table width-100-100">
+            <tr>
+                <td>昵称</td>
+                <td>玩法</td>
+                <td>押注</td>
+                <td>押分</td>
+                <td>结果</td>
+            </tr>
+        </table>
+    </fieldset>
+
+</div>
+<script src="/js/build/game-detail.js"></script>
+<% include ../../layouts/footer.htm%>

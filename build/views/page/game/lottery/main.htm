@@ -1,0 +1,92 @@
+<div class="back-blank-1 pb-60 bet-main-content width-100-100 left-0 bottom-0 z-index-100">
+    <div class="height-40 text-center position-relative color-white lh-40">
+        <div class="position-absolute left-0 top-0 pl-10 height-40 ">投注区</div>
+        单注押注：<span class="show-bet-count-rule"></span>
+    </div>
+    <div class="pt-10 pb-10 flex-left overflow-scroll pl-10 pr-10">
+        <div class="btn lottery-btn active-item break-none inline-block active" data-type="type">单连码</div>
+        <div class="btn lottery-btn active-item break-none inline-block" data-type="type">定 选</div>
+        <div class="btn lottery-btn active-item break-none inline-block" data-type="type">大小单双龙虎</div>
+        <div class="btn lottery-btn active-item break-none inline-block" data-type="type">定大小单双</div>
+        <div class="btn lottery-btn active-item break-none inline-block" data-type="type">大小单双组合</div>
+    </div>
+    <div class="swiper-container text-left width-100-100 color-white-6 height-90">
+        <div class="swiper-wrapper height-90">
+            <div class="swiper-slide height-90">
+                <div class="pt-10 flex-center">
+                    <div class="lottery-number active-item mr-2" data-type="group">0</div>
+                    <div class="lottery-number active-item mr-2" data-type="group">1</div>
+                    <div class="lottery-number active-item mr-2" data-type="group">2</div>
+                    <div class="lottery-number active-item mr-2" data-type="group">3</div>
+                    <div class="lottery-number active-item mr-2" data-type="group">4</div>
+                    <div class="lottery-number active-item mr-2" data-type="group">5</div>
+                    <div class="lottery-number active-item mr-2" data-type="group">6</div>
+                    <div class="lottery-number active-item mr-2" data-type="group">7</div>
+                    <div class="lottery-number active-item mr-2" data-type="group">8</div>
+                    <div class="lottery-number active-item" data-type="group">9</div>
+                </div>
+                <div class="pt-10 position-relative height-40">
+                    <div class="width-30-100 text-center margin-auto border-white lh-20 height-20 show-group-result">*****</div>
+                    <div class="btn btn-sm btn-border color-white border-white reset-bet-btn position-absolute right-0 top-0 mr-10 mt-10">重置</div>
+                </div>
+            </div>
+            <div class="swiper-slide height-90">
+                <div class="flex-center text-center pt-5">
+                    <div class=" lottery-number-select active-item mr-10" data-auto="万" data-type="selectType">万</div>
+                    <div class=" lottery-number-select active-item mr-10" data-auto="千" data-type="selectType">千</div>
+                    <div class=" lottery-number-select active-item mr-10" data-auto="百" data-type="selectType">百</div>
+                    <div class=" lottery-number-select active-item mr-10" data-auto="十" data-type="selectType">十</div>
+                    <div class=" lottery-number-select active-item mr-10" data-auto="个" data-type="selectType">个</div>
+                    <div class="btn btn-sm btn-border color-white border-white reset-bet-btn">重置</div>
+                </div>
+                <div class="color-white-6 fz-10 height-20 lh-20 text-center">请在对应位置选择你想要的数</div>
+                <div class="flex-center select-item-list" style="display: none;">
+                    <div class="lottery-number active-item mr-2" data-type="select">0</div>
+                    <div class="lottery-number active-item mr-2" data-type="select">1</div>
+                    <div class="lottery-number active-item mr-2" data-type="select">2</div>
+                    <div class="lottery-number active-item mr-2" data-type="select">3</div>
+                    <div class="lottery-number active-item mr-2" data-type="select">4</div>
+                    <div class="lottery-number active-item mr-2" data-type="select">5</div>
+                    <div class="lottery-number active-item mr-2" data-type="select">6</div>
+                    <div class="lottery-number active-item mr-2" data-type="select">7</div>
+                    <div class="lottery-number active-item mr-2" data-type="select">8</div>
+                    <div class="lottery-number active-item" data-type="select">9</div>
+                </div>
+            </div>
+            <div class="swiper-slide height-90">
+                <div class="pt-20 flex-center show-other-bet-list">
+                </div>
+                <div class="color-white-6 fz-10 height-20 lh-20 text-center">请选择要下注的类型</div>
+            </div>
+            <div class="swiper-slide height-90">
+                <div class="flex-center text-center pt-5">
+                    <div class=" lottery-number-select active-item mr-10"  data-type="selectOther">万</div>
+                    <div class=" lottery-number-select active-item mr-10"  data-type="selectOther">千</div>
+                    <div class=" lottery-number-select active-item mr-10"  data-type="selectOther">百</div>
+                    <div class=" lottery-number-select active-item mr-10"  data-type="selectOther">十</div>
+                    <div class=" lottery-number-select active-item mr-10"  data-type="selectOther">个</div>
+                </div>
+                <div class="color-white-6 fz-10 height-20 lh-20 text-center">请在对应位置选择你想要的类型</div>
+                <div class="flex-center text-center">
+                    <div class=" lottery-number active-item mr-10" data-value="big" data-type="selectOtherValue">大</div>
+                    <div class=" lottery-number active-item mr-10" data-value="small" data-type="selectOtherValue">小</div>
+                    <div class=" lottery-number active-item mr-10" data-value="odd" data-type="selectOtherValue">单</div>
+                    <div class=" lottery-number active-item mr-10" data-value="even" data-type="selectOtherValue">双</div>
+                </div>
+            </div>
+            <div class="swiper-slide height-90">
+                <div class="flex-center text-center pt-5">
+                    <div class=" lottery-number-select select-row active-item mr-10" data-value="bigOdd" data-type="otherDoubleValue">大单</div>
+                    <div class=" lottery-number-select select-row active-item mr-10" data-value="bigEven" data-type="otherDoubleValue">大双</div>
+                    <div class=" lottery-number-select select-row active-item mr-10" data-value="smallOdd" data-type="otherDoubleValue">小单</div>
+                    <div class=" lottery-number-select select-row active-item mr-10" data-value="smallEven" data-type="otherDoubleValue">小双</div>
+                </div>
+                <div class="color-white-6 fz-10 height-20 lh-20 text-center">请选择要下注的类型</div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-5 text-center pb-10">
+        <input type="tel" placeholder="请输入下注积分" class="input-sm width-60-100 margin-auto mb-10 text-center border-white back-transparent bet-score-input color-white">
+        <div class="btn btn-ml width-60-100 margin-auto back-yellow-4 add-bet-btn">立即下注</div>
+    </div>
+</div>

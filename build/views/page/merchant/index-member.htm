@@ -1,0 +1,35 @@
+<div class="swiper-slide height-100-percent swiper-member pt-60 overflow-scroll">
+    <div class="page-header page-fixed page-absolute flex-center back-blue">
+        <div class="active-item menu-item active" data-type="member">上分</div>
+        <div class="active-item menu-item" data-type="member">下分</div>
+        <div class="active-item menu-item" data-type="member">回水</div>
+        <div class="active-item menu-item" data-type="member">代理回水</div>
+    </div>
+    <div>
+        <form class="search-form pl-10 pt-10 pb-10 range-time-select">
+            <input type="text" name="nickName" class="border-rds-10 back-white width-30-100" placeholder="昵称搜索">
+            <input type="text" name="agentId" class="border-rds-10 back-white width-30-100" placeholder="代理商ID">
+            <div class="time-div mt-10" style="display: none;">
+                <input type="text" class="border-rds-10 back-white width-30-100 start-time"
+                       data-field="date"
+                       data-startend="start"
+                       placeholder="开始日期" >
+                <input type="text" class="border-rds-10 back-white width-30-100 start-time-m" placeholder="小时">
+            </div>
+            <div class="time-div mt-10" style="display: none;">
+                <input type="text" class="border-rds-10 back-white width-30-100 end-time"
+                       data-field="date"
+                       data-startend="end"
+                       placeholder="结束日期">
+                <input type="text" class="border-rds-10 back-white width-30-100 end-time-m" placeholder="小时">
+            </div>
+            <button type="submit" class="btn ml-10 back-blue color-white mr-2">搜索</button>
+            <button type="reset" class="btn ml-10 back-blue color-white mt-10">重置</button>
+            <button type="button" class="btn ml-10 back-blue color-white do-rebate-btn mr-2 mt-10" style="display: none">回水选中</button>
+            <button type="button" class="btn ml-10 back-blue color-white do-rebate-btn all-rebate mt-10" style="display: none">回水所有</button>
+        </form>
+        <table class="member-list-content table width-100-100 pt-10 pb-10 pl-10 pr-10 text-center td-ptb td-rb-eee">
+
+        </table>
+    </div>
+</div>

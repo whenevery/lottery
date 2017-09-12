@@ -1,0 +1,21 @@
+<% title="个人中心"%>
+<% include ../../layouts/header.htm%>
+<link rel="stylesheet" href="/css/swiper.min.css">
+<div class="back-f5 pb-60 height-100-100">
+    <div class="swiper-container text-left width-100-100 back-230">
+        <div class="swiper-wrapper height-100-percent">
+            <% include ./index-member.htm%>
+            <% include ./index-game.htm%>
+            <% include ./index-count.htm%>
+            <% include ./index-my.htm%>
+        </div>
+    </div>
+    <div class="page-footer page-fixed flex-center back-blue">
+        <div class="active-item menu-item active" data-type="footer">下家</div>
+        <div class="active-item menu-item" data-type="footer">游戏</div>
+        <div class="active-item menu-item" data-type="footer">统计</div>
+        <div class="active-item menu-item" data-type="footer">我的</div>
+    </div>
+</div>
+<script src="/js/build/user-index.js"></script>
+<% include ../../layouts/footer.htm%>

@@ -1,0 +1,39 @@
+.table{
+  width: 100%;
+  border-spacing: 2px;
+  border-collapse:collapse;
+  td{
+    padding: 0 1px;
+  }
+  &.border-spacing-0{
+    border-spacing: 0;
+  }
+  tr{
+    border-bottom: 1px solid #eee;
+  }
+  .border-none{
+    tr{
+      border-bottom: 0;
+    }
+  }
+  &.td-padding{
+    td{
+      padding: 3px 10px;
+    }
+  }
+  &.td-ptb{
+    &-1{
+      td{
+        padding: 2px 0;
+      }
+    }
+    td{
+      padding: 5px 0;
+    }
+  }
+  &.td-rb-eee{
+    td{
+      border-right: 1px solid #eee;
+    }
+  }
+}
