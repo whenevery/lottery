@@ -45,7 +45,7 @@ router.post('/down',useValidate.hasLogin,function(req, res, next) {
             game:'lottery'
         },function(err , data){
             res.sendSqlData(err, data);
-        })
+        },1);
     });
 
 });

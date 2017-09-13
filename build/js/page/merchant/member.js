@@ -13,8 +13,8 @@ $(function(){
         $count.append(createTr(['总下分次数',useCommon.sum(data,function(a){return a.type==='down'&&a.status===1?a.count:0})]));
         $count.append(createTr(['申请中下分',-useCommon.sum(data,function(a){return a.type==='down'&&a.status===0?a.score:0})]));
         $count.append(createTr(['申请中下分次数',useCommon.sum(data,function(a){return a.type==='down'&&a.status===0?a.count:0})]));
-        $count.append(createTr(['拒绝下分',useCommon.sum(data,function(a){return a.type==='return'?a.score:0})]));
-        $count.append(createTr(['拒绝下分次数',useCommon.sum(data,function(a){return a.type==='return'?a.count:0})]));
+        $count.append(createTr(['撤销下分',-useCommon.sum(data,function(a){return a.type==='down'&&a.status===2?a.score:0})]));
+        $count.append(createTr(['撤销下分次数',useCommon.sum(data,function(a){return a.type==='down'&&a.status===2?a.count:0})]));
         searchRebate();
     });
     function createTr(arr){

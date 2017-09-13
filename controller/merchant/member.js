@@ -43,18 +43,17 @@ router.post('/down/confirm',useValidate.hasLogin,function(req, res, next) {
            var downData = data[0];
            if(!downData)return res.useSend({message:'无效记录'});
            if(status === 1){
-               doUpdate();
-           }else{
                useData.addScore(downData.userId,{
-                   score:-downData.downScore,
+                   score:downData.downScore,
                    merchantId:req.session.userInfo.userId,
-                   scoreType:'operator',
-                   type:'return'
+                   notAddOperator:1,
                },function(err , data){
                    if(err){
                        return res.sendSqlData(err,data);
                    }else doUpdate();
                })
+           }else{
+               doUpdate();
            }
        }
     });

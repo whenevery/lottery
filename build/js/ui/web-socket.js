@@ -16,7 +16,7 @@
             socket.onclose = function(event) {
                 if(handler.onclose)handler.onclose(socket);
             };
-            if(handler.init)handler.init(socket);
+            if(handler && handler.init)handler.init(socket);
             call && call(socket);
         };
         socket.onerror  = function(event){

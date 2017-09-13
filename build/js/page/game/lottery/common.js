@@ -188,7 +188,7 @@
                 if(a.code == 0){
                     WY.trigger('socket-down-score',{merchantId:resJson.merchantInfo.userId});
                     WY.trigger('modal-hide');
-                    WY.trigger('user-info-flush');
+                    //WY.trigger('user-info-flush');
                 }
             })
         });
