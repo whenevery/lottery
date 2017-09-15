@@ -75,6 +75,7 @@
             }
         });
         $('.show-bet-count-rule').text(ruleData.betRule.betMinScore + '-' + ruleData.betRule.betMaxScore);
+        WY.trigger('active-item-bind',$showOtherRule);
     });
 
     var $betView;

@@ -23,6 +23,14 @@ $(function(){
     WY.bind('change-active-item',function($item){
         $item.addClass('active').siblings().removeClass('active');
     });
+    WY.bind('active-item-bind',function($content){
+        $content.find('.active-item').click(function(){
+            if($(this).hasClass('active'))return false;
+            $(this).addClass('active').siblings().removeClass('active');
+            WY.trigger('active-item',$(this));
+            return false;
+        });
+    });
     if($.fn.DateTimePicker)$('.date-picker-window').DateTimePicker(
         {
             dateFormat: "dd-MM-yyyy"
