@@ -6,11 +6,7 @@ module.exports = function(rule){
             betMaxScore:2000,
             betAllMaxScore:20000,
             rebateRate:1.5,
-            minRebateScore:0,
-            maxRebateScore:300000,
             childRebateRate:0.5,
-            childMinRebateScore:0,
-            childMaxRebateScore:300000,
         },
         res:[
             {

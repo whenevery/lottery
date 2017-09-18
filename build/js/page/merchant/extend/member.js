@@ -109,7 +109,7 @@ WY.ready('user-member-obj',function(merchantObj){
                 this.content.html('<tr>\n' +
                     '                <td>昵称</td>\n' +
                     '                <td>代Id</td>\n' +
-                    '                <td>积分</td>\n' +
+                    '                <td>当前积分</td>\n' +
                     '                <td>操作</td>\n' +
                     '            </tr>')
             }else if(this.menuType === 'down'){
@@ -124,9 +124,8 @@ WY.ready('user-member-obj',function(merchantObj){
                 this.content.html('<tr class="break-none">\n' +
                     '                <td><input type="checkbox" check-all="rebate"></td>\n' +
                     '                <td>昵称</td>\n' +
-                    '                <td>代Id</td>\n' +
-                    '                <td>积分</td>\n' +
                     '                <td>下注</td>\n' +
+                    '                <td>次数</td>\n' +
                     '                <td>赢亏</td>\n' +
                     '                <td>回水</td>\n' +
                     '                <td>操作</td>\n' +
@@ -135,8 +134,8 @@ WY.ready('user-member-obj',function(merchantObj){
                 this.content.html('<tr class="break-none">\n' +
                     '                <td><input type="checkbox" check-all="rebate"></td>\n' +
                     '                <td>昵称</td>\n' +
-                    '                <td>当前积分</td>\n' +
-                    '                <td>总下注</td>\n' +
+                    '                <td>下注</td>\n' +
+                    '                <td>次数</td>\n' +
                     '                <td>总赢亏</td>\n' +
                     '                <td>总回水</td>\n' +
                     '                <td>操作</td>\n' +
@@ -149,17 +148,37 @@ WY.ready('user-member-obj',function(merchantObj){
             var pageData = data.pageData;
             this.lastPage = pageData.lastPage;
             if(sts)this.content.find('.data-list').remove();
+            var isRebate = this.menuType === 'rebate' || that.menuType === 'userRebate';
+            if(isRebate){
+                var sum = {
+                    nickName:'总计',
+                    betCount:useCommon.sum(data.data,function(a){return a.betCount}) || '0',
+                    betScore:useCommon.sum(data.data,function(a){return a.betScore}) || '0',
+                    rebateScore:useCommon.sum(data.data,function(a){return a.rebateScore}) || '0',
+                    resultScore:useCommon.sum(data.data,function(a){return a.resultScore}) || '0',
+                    score:useCommon.sum(data.data,function(a){return a.score}) || '0',
+                };
+                console.log(sum);
+                data.data.unshift(sum);
+            }
             $.each(data.data , function(i , o){
                 var $tr = $('<tr class="data-list">');
-                if(that.menuType === 'rebate' || that.menuType === 'userRebate')$tr.append('<td><input type="checkbox" code="'+o.userId+'" check-one="rebate"></td>');
-                $tr.append('<td>'+o.nickName + '('+o.userId+')' +'</td>');
-                if(that.menuType !== 'userRebate')$tr.append('<td>'+o.agentId+'</td>');
-                $tr.append('<td>'+(o.score || 0)+'</td>');
+                if(isRebate){
+                    if(o.userId){
+                        $tr.append('<td><input type="checkbox" code="'+o.userId+'" check-one="rebate"></td>');
+                    }else{
+                        $tr.append('<td></td>');
+                    }
+                }
+                $tr.append('<td>'+o.nickName + (o.userId?'('+o.userId+')':'') +'</td>');
+                if(!isRebate)$tr.append('<td>'+o.agentId+'</td>');
+                if(!isRebate)$tr.append('<td>'+(o.score || 0)+'</td>');
                 if(o.downScore)$tr.append('<td>'+(o.downScore || 0)+'</td>');
                 if(o.betScore)$tr.append('<td>'+(o.betScore || 0)+'</td>');
+                if(isRebate)$tr.append('<td>'+(o.betCount || 0)+'</td>');
                 if(o.resultScore)$tr.append('<td >'+(o.resultScore || 0)+'</td>');
                 if(o.rebateScore)$tr.append('<td>'+(o.rebateScore || 0)+'</td>');
-                $tr.append('<td>' +
+                if(o.userId)$tr.append('<td>' +
                     '<a class="btn btn-sm back-blue color-white add-score-btn mr-10 break-none" down="'+o.downId+'" code="'+o.userId+'">'+(
                         {
                             up:'上分',

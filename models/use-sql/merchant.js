@@ -78,12 +78,11 @@ module.exports = function(sql){
         },
         memberBetSearch:function(data){
             var sql = 'select * from ('+this.memberBetCommon(data)+') mbc ' +
-                'where mbc.rebate_score > ' + data.minRebateScore + ' order by mbc.rebate_score desc';
+                ' order by mbc.rebate_score desc';
             return  sql;
         },
         memberBetCount:function(data){
-            var sql = ' from ('+this.memberBetCommon(data)+') mbc ' +
-                'where mbc.rebate_score > ' + data.minRebateScore;
+            var sql = ' from ('+this.memberBetCommon(data)+') mbc ' ;
             return  sql;
         },
         agentBetCommon:function(data){
@@ -104,12 +103,11 @@ module.exports = function(sql){
         },
         agentBetSearch:function(data){
             var sql = 'select * from ('+this.agentBetCommon(data)+') mbc ' +
-                'where mbc.rebate_score > ' + data.minRebateScore + ' order by mbc.rebate_score desc';
+                ' order by mbc.rebate_score desc';
             return  sql;
         },
         agentBetCount:function(data){
-            var sql = ' from ('+this.agentBetCommon(data)+') mbc ' +
-                'where mbc.rebate_score > ' + data.minRebateScore;
+            var sql = ' from ('+this.agentBetCommon(data)+') mbc ';
             return  sql;
         },
     };

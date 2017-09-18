@@ -3,6 +3,7 @@ WY.ready('user-member-obj',function(merchantObj){
     merchantObj.count = {
         init:function(){
             if(!this.content){
+                this.timeDiv = $('.swiper-count .time-div');
                 this.menuType = 'member';
                 this.content = $('.swiper-count .count-list-content');
                 this.searchForm = $('.swiper-count .search-form');
@@ -24,6 +25,7 @@ WY.ready('user-member-obj',function(merchantObj){
         changeMenu:function(index){
             this.menuType = ['member','game','bet','score','rebate'][index];
             this.searchForm[index===1?'hide':'show']();
+            this.timeDiv[index > 1?'show':'hide']();
             this.reset();
         },
         reset:function(){
@@ -79,12 +81,6 @@ WY.ready('user-member-obj',function(merchantObj){
                     $count.append(this.createTr(['回水人数',data.number]));
                     $count.append(this.createTr(['回水积分',data.score]));
                     break;
-                case 'rebate':
-                    data = data[0];
-                    $count.append(this.createTr(['回水次数',data.count]));
-                    $count.append(this.createTr(['回水人数',data.number]));
-                    $count.append(this.createTr(['回水积分',data.score]));
-                    break;
                 case 'member':
                     $count.append(this.createTr(['会员数',data[0]&&data[0].userCount]));
                     $count.append(this.createTr(['会员总积分',data[0]&&data[0].score]));
@@ -105,7 +101,11 @@ WY.ready('user-member-obj',function(merchantObj){
         doSearch:function(sts){
             var that = this;
             $.get('/merchant/count/'+this.menuType,{
-                agentId:this.searchForm.find('[name=agentId]').val().trim()
+                agentId:this.searchForm.find('[name=agentId]').val().trim(),
+                startTime:this.searchForm.find('.start-time').val().split('-').reverse().join('-'),
+                startTimeM:this.searchForm.find('.start-time-m').val(),
+                endTime:this.searchForm.find('.end-time').val().split('-').reverse().join('-'),
+                endTimeM:this.searchForm.find('.end-time-m').val(),
             },function(data){
                 that.setData(data,sts);
             });

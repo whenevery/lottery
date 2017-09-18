@@ -9,6 +9,20 @@
     <div>
         <form class="search-form pl-10 pt-10 pb-10">
             <input type="text" name="agentId" class="border-rds-10 back-white width-30-100" placeholder="代理商ID">
+            <div class="time-div mt-10" style="display: none;">
+                <input type="text" class="border-rds-10 back-white width-30-100 start-time"
+                       data-field="date"
+                       data-startend="start"
+                       placeholder="开始日期" >
+                <input type="text" class="border-rds-10 back-white width-30-100 start-time-m" placeholder="小时">
+            </div>
+            <div class="time-div mt-10" style="display: none;">
+                <input type="text" class="border-rds-10 back-white width-30-100 end-time"
+                       data-field="date"
+                       data-startend="end"
+                       placeholder="结束日期">
+                <input type="text" class="border-rds-10 back-white width-30-100 end-time-m" placeholder="小时">
+            </div>
             <button type="submit" class="btn ml-10 back-blue color-white mr-2">搜索</button>
             <button type="reset" class="btn ml-10 back-blue color-white">重置</button>
         </form>

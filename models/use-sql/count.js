@@ -2,17 +2,19 @@ module.exports = function(sql){
     sql.count = {
         count:function(data){
             var sql = 'select sum(b.bet_count) bet_count,sum(b.score*b.bet_count) bet_score,' +
-                'sum(b.result_score) result_score,b.status status  ' +
+                'sum(b.result_score) result_score,b.status status ' +
                 ' from `bet` b ' +
                 ' left join merchant_member mm on b.user_id=mm.user_id and b.merchant_id=mm.merchant_id' +
-                ' where b.merchant_id='+data.merchantId;
+                ' where b.status=1 and b.merchant_id='+data.merchantId;
             if(data.memberId){
                 sql += ' and b.user_id='+data.memberId;
             }
             if(data.agentId){
                 sql += ' and mm.agent_id='+data.agentId;
             }
-            sql += ' group by `status`';
+            if(data.startTime)sql += ' and b.create_time >= "'+data.startTime + '" ';
+            if(data.endTime)sql += ' and b.create_time <= "'+data.endTime + '" ';
+            sql += ' group by b.status';
             return sql;
         },
         scoreCount:function(data){
@@ -26,6 +28,8 @@ module.exports = function(sql){
             if(data.agentId){
                 sql += ' and mm.agent_id='+data.agentId;
             }
+            if(data.startTime)sql += ' and b.create_time >= "'+data.startTime + '" ';
+            if(data.endTime)sql += ' and b.create_time <= "'+data.endTime + '" ';
             sql += ' GROUP BY `type`,`status`';
             return sql;
         },
@@ -45,6 +49,8 @@ module.exports = function(sql){
             if(data.agentId){
                 sql += ' and mm.agent_id='+data.agentId;
             }
+            if(data.startTime)sql += ' and b.create_time >= "'+data.startTime + '" ';
+            if(data.endTime)sql += ' and b.create_time <= "'+data.endTime + '" ';
             return sql;
         },
     };

@@ -18,16 +18,10 @@ router.get('/list',useValidate.hasLogin, function(req, res, next) {
             agentId:req.query.agentId,
             startTime:startTime,
             endTime:endTime,
-            minRebateScore:ruleData.betRule.minRebateScore,
             rebateRate:ruleData.betRule.rebateRate / 100,
         };
-        useMysql.searchAll({
-            sql:useSql.merchant.memberBetSearch(searchData),
-            count:useSql.merchant.memberBetCount(searchData),
-            page:req.query.page,
-            pageSize:req.query.pageSize
-        },function(data){
-            res.useSend(data);
+        useMysql.search(useSql.merchant.memberBetSearch(searchData),function(err , data){
+            res.sendSqlData(err , data);
         })
     });
 });
@@ -48,16 +42,10 @@ router.get('/list/again',useValidate.hasLogin, function(req, res, next) {
             nickName:req.query.nickName,
             startTime:startTime,
             endTime:endTime,
-            minRebateScore:ruleData.betRule.childMinRebateScore,
             rebateRate:ruleData.betRule.childRebateRate / 100,
         };
-        useMysql.searchAll({
-            sql:useSql.merchant.agentBetSearch(searchData),
-            count:useSql.merchant.agentBetCount(searchData),
-            page:req.query.page,
-            pageSize:req.query.pageSize
-        },function(data){
-            res.useSend(data);
+        useMysql.search(useSql.merchant.agentBetSearch(searchData),function(err , data){
+            res.sendSqlData(err , data);
         })
     });
 });
@@ -78,7 +66,6 @@ router.post('/do',useValidate.hasLogin, function(req, res, next) {
             startTime:startTime,
             endTime:endTime,
             merchantId:req.session.userInfo.userId,
-            minRebateScore:ruleData.betRule.minRebateScore,
             rebateRate:ruleData.betRule.rebateRate / 100,
             userIds:req.body.userIds,
         };
@@ -86,7 +73,7 @@ router.post('/do',useValidate.hasLogin, function(req, res, next) {
         useMysql.search(useSql.merchant.memberBetSearch(searchData),function(err , data){
             var memberAll = [];
             data.forEach(function(a){
-                var rebateScore = Math.min(a.rebateScore , ruleData.betRule.maxRebateScore);
+                var rebateScore = a.rebateScore;//Math.min(a.rebateScore , ruleData.betRule.maxRebateScore);
                 memberAll.push(new Promise(function(rev){
                     //查询具体的下注记录
                     useMysql.search(useSql.common.search('bet',{
@@ -163,7 +150,6 @@ router.post('/do/again',useValidate.hasLogin, function(req, res, next) {
             merchantId:req.session.userInfo.userId,
             startTime:startTime,
             endTime:endTime,
-            minRebateScore:ruleData.betRule.childMinRebateScore,
             rebateRate:ruleData.betRule.childRebateRate / 100,
             userIds:req.body.userIds,
         };
@@ -171,7 +157,7 @@ router.post('/do/again',useValidate.hasLogin, function(req, res, next) {
         useMysql.search(useSql.merchant.agentBetSearch(searchData),function(err , data){
             var memberAll = [];
             data.forEach(function(a){
-                var rebateScore = Math.min(a.rebateScore , ruleData.betRule.childMaxRebateScore);
+                var rebateScore = a.rebateScore;//Math.min(a.rebateScore , ruleData.betRule.childMaxRebateScore);
                 memberAll.push(new Promise(function(rev){
                     //查询具体的下注记录
                     useMysql.search(useSql.bet.agentRebate({

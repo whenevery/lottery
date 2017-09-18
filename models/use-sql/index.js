@@ -7,11 +7,11 @@ sql.sqlQuery = function(data , split){
         var d = data[key];
         if(d == null || d === "")continue;
         if(key === 'startCreateTime'){
-            arr.push('create_time>="'+data[key]+' 00:00:00"');
+            arr.push('create_time>="'+data[key]  + '" ');
             continue;
         }
         if(key === 'endCreateTime'){
-            arr.push('create_time<="'+data[key]+' 23:59:59"');
+            arr.push('create_time<="'+data[key]  + '" ');
             continue;
         }
         var isIn;
