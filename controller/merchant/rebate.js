@@ -21,7 +21,9 @@ router.get('/list',useValidate.hasLogin, function(req, res, next) {
             rebateRate:ruleData.betRule.rebateRate / 100,
         };
         useMysql.search(useSql.merchant.memberBetSearch(searchData),function(err , data){
-            res.sendSqlData(err , data);
+            res.sendSqlData(err , data,{
+                rebateRate:ruleData.betRule.rebateRate / 100
+            });
         })
     });
 });
@@ -67,6 +69,7 @@ router.post('/do',useValidate.hasLogin, function(req, res, next) {
             endTime:endTime,
             merchantId:req.session.userInfo.userId,
             rebateRate:ruleData.betRule.rebateRate / 100,
+            isRebate:'0',
             userIds:req.body.userIds,
         };
         //查询回水记录

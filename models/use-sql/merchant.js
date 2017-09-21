@@ -66,8 +66,9 @@ module.exports = function(sql){
                 'from merchant_member mm ' +
                 'LEFT JOIN `user` u on u.user_id = mm.user_id ' +
                 'RIGHT JOIN `bet` b on b.user_id = mm.user_id and mm.merchant_id = b.merchant_id ' +
-                'where b.status =1 and b.is_rebate=0 ';
+                'where b.status =1 ';
             sql += ' and mm.merchant_id="'+data.merchantId+'" ';
+            if(data.isRebate)sql += ' and b.is_rebate='+data.isRebate;
             if(data.nickName)sql += ' and `nick_name` like "%'+data.nickName+'%" ';
             if(data.userIds)sql += ' and mm.user_id in ('+data.userIds+') ';
             if(data.agentId)sql += ' and mm.agent_id="'+data.agentId+'" ';

@@ -146,7 +146,7 @@ WY.ready('user-member-obj',function(merchantObj){
         setData:function(data,sts){
             var that = this;
             var pageData = data.pageData;
-            this.lastPage = pageData.lastPage;
+            if(pageData)this.lastPage = pageData.lastPage;
             if(sts)this.content.find('.data-list').remove();
             var isRebate = this.menuType === 'rebate' || that.menuType === 'userRebate';
             if(isRebate){
@@ -158,7 +158,6 @@ WY.ready('user-member-obj',function(merchantObj){
                     resultScore:useCommon.sum(data.data,function(a){return a.resultScore}) || '0',
                     score:useCommon.sum(data.data,function(a){return a.score}) || '0',
                 };
-                console.log(sum);
                 data.data.unshift(sum);
             }
             $.each(data.data , function(i , o){
@@ -192,7 +191,9 @@ WY.ready('user-member-obj',function(merchantObj){
                     '</td>');
                 that.content.append($tr);
             });
-            this.moreElement.html(pageData.lastPage?'没有更多了':'加载更多');
+            if(pageData){
+                this.moreElement.show().html(pageData.lastPage?'没有更多了':'加载更多');
+            }else this.moreElement.hide();
         },
         doSearch:function(sts){
             var that = this;

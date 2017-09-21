@@ -37,13 +37,13 @@ module.exports = function(req , res , next){
             data:data
         });
     };
-    res.sendSqlData = function(err , data){
-        res.useSend({
-            code:err!==null,
-            err:err,
-            message:err?(err.message||'操作失败') : '操作成功',
-            data:data
-        });
+    res.sendSqlData = function(err , data , extend){
+        extend = extend || {};
+        extend.code = err!==null;
+        extend.err = err;
+        extend.message = err?(err.message||'操作失败') : '操作成功';
+        extend.data = data;
+        res.useSend(extend);
     };
     res.useRender = function(path , data){
         // useSession.resave(req , res , function(){
